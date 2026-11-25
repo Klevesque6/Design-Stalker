@@ -1,0 +1,6 @@
+{
+  "name": "Monograph",
+  "description": "UI/UX website analyzer that loads live websites in a headless browser, extracts design tokens, components, interaction states, information architecture, accessibility metrics, and screenshots, and generates grounded AI critiques and reusable code exports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, Cambria, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-paper: #F8F5F0;
+  --color-alabaster: #FFFFFF;
+  --color-limestone: #EFECE6;
+  --color-rule: #E2DDD5;
+  --color-ink: #1C1917;
+  --color-ink-muted: #57534E;
+  --color-ink-subtle: #78716C;
+  --color-lapis: #1D3557;
+  --color-lapis-hover: #152843;
+  --color-pass: #15803D;
+  --color-warn: #B45309;
+  --color-fail: #B91C1C;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Editorial scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F5F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D6CFC4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8AFA2;
+}
+
+/* Print / PDF Dossier Stylesheet */
+@media print {
+  @page {
+    margin: 14mm;
+    size: A4 portrait;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #1C1917 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
